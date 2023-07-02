@@ -1,0 +1,84 @@
+void setup() {
+ Serial.begin(9600);
+pinMode(3,INPUT);
+pinMode(6,INPUT);// put your setup code here, to run once:
+for(int i=10;i<14;i++)
+pinMode(13,OUTPUT);
+}
+void forward(){
+digitalWrite(10,0);
+ digitalWrite(11,1);
+ digitalWrite(12,1);
+ digitalWrite(13,0);
+ delay(2000);
+}
+void right(){
+ digitalWrite(10,0);
+ digitalWrite(11,0);
+ digitalWrite(12,1);
+ digitalWrite(13,0);
+ delay(5000);
+ }
+ void back(){
+ digitalWrite(10,0);
+ digitalWrite(11,1);
+ digitalWrite(12,1);
+ digitalWrite(13,0);
+ delay(2000);
+ }
+ void left(){
+ digitalWrite(10,1);
+ digitalWrite(11,0);
+ digitalWrite(12,0);
+ digitalWrite(13,0);
+ delay(5000);
+ }
+ void stop(){
+ digitalWrite(10,0);
+ digitalWrite(11,0);
+ digitalWrite(12,0);
+ digitalWrite(13,0);
+}
+void loop() {
+ 
+ if((digitalRead(3)==0)&& (digitalRead(6)==0) )
+ {
+ forward();
+ 
+ // put your main code here, to run repeatedly:
+ 
+ 
+ 
+ // put your main code here, to run repeatedly:
+}
+else if((digitalRead(3)==0)&& (digitalRead(6)==1) )
+ {
+ right();
+ 
+ // put your main code here, to run repeatedly:
+ 
+ 
+ 
+ // put your main code here, to run repeatedly:
+}
+else if((digitalRead(3)==1)&& (digitalRead(6)==0) )
+ {
+ left();
+ 
+ // put your main code here, to run repeatedly:
+ 
+ 
+ 
+ // put your main code here, to run repeatedly:
+}
+else if((digitalRead(3)==1)&& (digitalRead(6)==1) )
+ {
+ stop();
+ 
+ // put your main code here, to run repeatedly:
+ 
+ 
+ 
+ // put your main code here, to run repeatedly:
+}
+}
